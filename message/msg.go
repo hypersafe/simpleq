@@ -19,13 +19,29 @@ func NewMsg() Msg{
 	return Msg{ }
 }
 
+func NewMsgFromParam(from string, to string , content string ) Msg{
+	msg := Msg{From: from, To: to, Content: content }
+	msg.GenerateCheckSum()
+	return msg
+}
+
 func NewMsgFromJson(jsonstr string) (Msg, error){
 	msg := Msg{}
 	err := json.Unmarshal([]byte(jsonstr),&msg)
+	if err==nil{
+		msg.GenerateCheckSum()
+	}
 	return msg, err
 
 }
 
+
+func (msg *Msg) CheckValidMsg() bool{
+	if msg.Content != "" && msg.From != "" && msg.To != ""{
+		return true
+	}
+	return false;
+}
 func (msg *Msg)  GenerateCheckSum(){
 	sumbuf := bytes.Buffer{}
 	sumbuf.WriteString(msg.From)

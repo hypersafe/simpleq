@@ -25,9 +25,9 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
 type Msg struct {
-	From                 string   `protobuf:"bytes,1,opt,name=from,proto3" json:"from,omitempty"`
-	To                   string   `protobuf:"bytes,2,opt,name=to,proto3" json:"to,omitempty"`
-	Content              string   `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
+	Mfrom                string   `protobuf:"bytes,1,opt,name=mfrom,proto3" json:"mfrom,omitempty"`
+	Mto                  string   `protobuf:"bytes,2,opt,name=mto,proto3" json:"mto,omitempty"`
+	Mcontent             string   `protobuf:"bytes,3,opt,name=mcontent,proto3" json:"mcontent,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -58,23 +58,23 @@ func (m *Msg) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Msg proto.InternalMessageInfo
 
-func (m *Msg) GetFrom() string {
+func (m *Msg) GetMfrom() string {
 	if m != nil {
-		return m.From
+		return m.Mfrom
 	}
 	return ""
 }
 
-func (m *Msg) GetTo() string {
+func (m *Msg) GetMto() string {
 	if m != nil {
-		return m.To
+		return m.Mto
 	}
 	return ""
 }
 
-func (m *Msg) GetContent() string {
+func (m *Msg) GetMcontent() string {
 	if m != nil {
-		return m.Content
+		return m.Mcontent
 	}
 	return ""
 }
@@ -126,18 +126,18 @@ func init() {
 func init() { proto.RegisterFile("message_service.proto", fileDescriptor_f9987a16c7a183dc) }
 
 var fileDescriptor_f9987a16c7a183dc = []byte{
-	// 161 bytes of a gzipped FileDescriptorProto
+	// 164 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0xcd, 0x4d, 0x2d, 0x2e,
 	0x4e, 0x4c, 0x4f, 0x8d, 0x2f, 0x4e, 0x2d, 0x2a, 0xcb, 0x4c, 0x4e, 0xd5, 0x2b, 0x28, 0xca, 0x2f,
-	0xc9, 0x57, 0x72, 0xe6, 0x62, 0xf6, 0x2d, 0x4e, 0x17, 0x12, 0xe2, 0x62, 0x49, 0x2b, 0xca, 0xcf,
-	0x95, 0x60, 0x54, 0x60, 0xd4, 0xe0, 0x0c, 0x02, 0xb3, 0x85, 0xf8, 0xb8, 0x98, 0x4a, 0xf2, 0x25,
-	0x98, 0xc0, 0x22, 0x4c, 0x25, 0xf9, 0x42, 0x12, 0x5c, 0xec, 0xc9, 0xf9, 0x79, 0x25, 0xa9, 0x79,
-	0x25, 0x12, 0xcc, 0x60, 0x41, 0x18, 0x57, 0x49, 0x86, 0x8b, 0x2d, 0xb8, 0x24, 0xb1, 0xa4, 0xb4,
-	0x18, 0x64, 0x4e, 0x72, 0x7e, 0x4a, 0x2a, 0xd8, 0x1c, 0xd6, 0x20, 0x30, 0xdb, 0xc8, 0x80, 0x8b,
-	0xcf, 0x17, 0x62, 0x77, 0x30, 0xc4, 0x6a, 0x21, 0x39, 0x2e, 0xee, 0xe2, 0xd4, 0xbc, 0x14, 0xa8,
-	0x8b, 0x84, 0x58, 0xf4, 0x7c, 0x8b, 0xd3, 0xa5, 0xd8, 0xf5, 0x20, 0x66, 0x28, 0x31, 0x24, 0xb1,
-	0x81, 0xdd, 0x66, 0x0c, 0x08, 0x00, 0x00, 0xff, 0xff, 0x51, 0x55, 0x7c, 0x3f, 0xb4, 0x00, 0x00,
-	0x00,
+	0xc9, 0x57, 0xf2, 0xe4, 0x62, 0xf6, 0x2d, 0x4e, 0x17, 0x12, 0xe1, 0x62, 0xcd, 0x4d, 0x2b, 0xca,
+	0xcf, 0x95, 0x60, 0x54, 0x60, 0xd4, 0xe0, 0x0c, 0x82, 0x70, 0x84, 0x04, 0xb8, 0x98, 0x73, 0x4b,
+	0xf2, 0x25, 0x98, 0xc0, 0x62, 0x20, 0xa6, 0x90, 0x14, 0x17, 0x47, 0x6e, 0x72, 0x7e, 0x5e, 0x49,
+	0x6a, 0x5e, 0x89, 0x04, 0x33, 0x58, 0x18, 0xce, 0x57, 0x92, 0xe1, 0x62, 0x0b, 0x2e, 0x49, 0x2c,
+	0x29, 0x2d, 0x16, 0x12, 0xe2, 0x62, 0x49, 0xce, 0x4f, 0x49, 0x05, 0x1b, 0xc6, 0x1a, 0x04, 0x66,
+	0x1b, 0xe9, 0x73, 0xf1, 0xf9, 0x42, 0x5c, 0x10, 0x0c, 0x71, 0x80, 0x90, 0x2c, 0x17, 0x97, 0x5f,
+	0x6a, 0x39, 0x54, 0x50, 0x88, 0x45, 0xcf, 0xb7, 0x38, 0x5d, 0x8a, 0x5d, 0x0f, 0x62, 0x84, 0x12,
+	0x43, 0x12, 0x1b, 0xd8, 0x81, 0xc6, 0x80, 0x00, 0x00, 0x00, 0xff, 0xff, 0x57, 0x99, 0xbf, 0xd1,
+	0xb9, 0x00, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -152,7 +152,7 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type MessageServiceClient interface {
-	Sendmessage(ctx context.Context, in *Msg, opts ...grpc.CallOption) (*Status, error)
+	NewMessage(ctx context.Context, in *Msg, opts ...grpc.CallOption) (*Status, error)
 }
 
 type messageServiceClient struct {
@@ -163,9 +163,9 @@ func NewMessageServiceClient(cc *grpc.ClientConn) MessageServiceClient {
 	return &messageServiceClient{cc}
 }
 
-func (c *messageServiceClient) Sendmessage(ctx context.Context, in *Msg, opts ...grpc.CallOption) (*Status, error) {
+func (c *messageServiceClient) NewMessage(ctx context.Context, in *Msg, opts ...grpc.CallOption) (*Status, error) {
 	out := new(Status)
-	err := c.cc.Invoke(ctx, "/MessageService/sendmessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/MessageService/NewMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -174,35 +174,35 @@ func (c *messageServiceClient) Sendmessage(ctx context.Context, in *Msg, opts ..
 
 // MessageServiceServer is the server API for MessageService service.
 type MessageServiceServer interface {
-	Sendmessage(context.Context, *Msg) (*Status, error)
+	NewMessage(context.Context, *Msg) (*Status, error)
 }
 
 // UnimplementedMessageServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedMessageServiceServer struct {
 }
 
-func (*UnimplementedMessageServiceServer) Sendmessage(ctx context.Context, req *Msg) (*Status, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Sendmessage not implemented")
+func (*UnimplementedMessageServiceServer) NewMessage(ctx context.Context, req *Msg) (*Status, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method NewMessage not implemented")
 }
 
 func RegisterMessageServiceServer(s *grpc.Server, srv MessageServiceServer) {
 	s.RegisterService(&_MessageService_serviceDesc, srv)
 }
 
-func _MessageService_Sendmessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MessageService_NewMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Msg)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MessageServiceServer).Sendmessage(ctx, in)
+		return srv.(MessageServiceServer).NewMessage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/MessageService/Sendmessage",
+		FullMethod: "/MessageService/NewMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MessageServiceServer).Sendmessage(ctx, req.(*Msg))
+		return srv.(MessageServiceServer).NewMessage(ctx, req.(*Msg))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -212,8 +212,8 @@ var _MessageService_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*MessageServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "sendmessage",
-			Handler:    _MessageService_Sendmessage_Handler,
+			MethodName: "NewMessage",
+			Handler:    _MessageService_NewMessage_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

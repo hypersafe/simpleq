@@ -1,14 +1,14 @@
 syntax="proto3";
 
 service MessageService{
-    rpc sendmessage(Msg) returns (Status){}
+    rpc NewMessage(Msg) returns (Status){}
 }
 
 
 message Msg{
-    string from=1;
-    string to=2;
-    string content=3;
+    string mfrom=1;
+    string mto=2;
+    string mcontent=3;
 }
 
 message Status{
